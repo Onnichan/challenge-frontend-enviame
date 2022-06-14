@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  padding: 20px;
+}
+
+pre {
+  outline: 1px solid #ccc;
+  padding: 15px;
+  margin: 5px;
+  background-color: rgba(241, 99, 123, 0.16);
+}
+.string {
+  color: green;
+}
+.number {
+  color: darkorange;
+}
+.boolean {
+  color: blue;
+}
+.null {
+  color: magenta;
+}
+.key {
+  color: red;
+}
+
+.btn{
+  display: block;
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 4px;
+  width: 200px;
+  margin: 40px auto;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  gap: 40px;
+}
+
+.grid__item-title{
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
