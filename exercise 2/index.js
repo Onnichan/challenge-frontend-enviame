@@ -100,7 +100,28 @@ let json = {
   },
 };
 
-
-function treatment(firstDoc, secondDoc){
-  return ;
+function treatment(firstDoc, secondDoc) {
+  // const result = {... secondDoc.data};
+  const result = _.cloneDeep(secondDoc);
+  // console.log(result);
+  // for (obj in secondDoc.data) {
+  //   const red = secondDoc.data[obj].reduce(
+  //     (current, next) => (current.limit > next.limit ? current : next),
+  //     {}
+  //   );
+  //   Object.defineProperties(obj, key)
+  //   red['over'] = red['over_carrier_service_id'];
+  //   red['under'] = red['under_carrier_service_id'];
+  //   secondDoc.data[obj] = red;
+  //   for(key in values){
+  //     if(key == red['carrier']){
+  //       red['carrier'] = values[key];
+  //       red['service'] = values[key];
+  //     }
+  //   }
+  // }
+  // console.log(secondDoc.data);
+  console.log(result);
+  return {};
 }
+treatment(values, json);
