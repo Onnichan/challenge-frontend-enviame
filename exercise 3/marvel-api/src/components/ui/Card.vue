@@ -1,5 +1,6 @@
 <script setup>
 import { formateDate } from "../../util/date.js";
+import { RouterLink } from "vue-router";
 
 const props = defineProps({
     character: {
@@ -11,7 +12,7 @@ const props = defineProps({
 <template>
     <div class="card">
         <div class="card__body">
-            <div class="card__thumbnail">
+            <router-link to="/asdasd" class="card__thumbnail">
                 <img
                     :src="
                         character.thumbnail.path.concat(
@@ -20,13 +21,15 @@ const props = defineProps({
                     "
                     class="card__image"
                     :alt="character.name"
+                    :title="character.name"
                     loading="lazy"
                 />
-            </div>
+            </router-link>
             <!-- <div class="card__body-description">{{character.description}}</div>
             <div class="card__body-modified">{{formateDate(character.modified)}}</div> -->
         </div>
         <div class="card__title">{{ character.name }}</div>
+        <button>Editar</button>
     </div>
 </template>
 <style scoped>
@@ -40,7 +43,7 @@ const props = defineProps({
     margin-top: 20px;
 }
 
-.card__body{
+.card__body {
     /* position: relative; */
 }
 
@@ -50,11 +53,13 @@ const props = defineProps({
 }
 .card__image {
     width: 100%;
-    height: 100%;
+    height: 300px;
     display: block;
     border-radius: 4px;
     object-fit: cover;
+    /* z-index: 5; */
 }
+
 .card__thumbnail::before {
     position: absolute;
     content: "";

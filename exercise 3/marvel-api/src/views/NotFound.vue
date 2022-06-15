@@ -1,6 +1,9 @@
+<script setup>
+import NotFound from "../components/svg/404.vue";
+</script>
 <template>
     <div class="notFound">
-        <h1 class="notFound__title">Page not found</h1>
+        <NotFound></NotFound>
     </div>
 </template>
 <style scoped>

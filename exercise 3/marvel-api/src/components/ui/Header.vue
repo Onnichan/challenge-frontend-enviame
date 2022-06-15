@@ -1,6 +1,5 @@
 <script setup>
 import Logo from "../Logo.vue";
-import Container from "../layout/Container.vue";
 import { RouterLink } from "vue-router";
 </script>
 <template>
@@ -10,15 +9,15 @@ import { RouterLink } from "vue-router";
                 <Logo width="100"></Logo>
             </router-link>
             <ul class="header__nav-list">
-                <li class="header_nav-item">
-                    <a href="#" class="header__nav-item link">Example 1</a>
-                </li>
-                <li class="header_nav-item">
-                    <a href="#" class="header__nav-item link">Example 2</a>
-                </li>
-                <li class="header_nav-item">
-                    <a href="#" class="header__nav-item link">Example 3</a>
-                </li>
+                <routerLink to="/" class="header_nav-item">
+                    <a href="#" class="header__nav-item link">About</a>
+                </routerLink>
+                <router-link to="/" class="header_nav-item">
+                    <a href="#" class="header__nav-item link">Favorites</a>
+                </router-link>
+                <router-link to="/" class="header_nav-item">
+                    <a href="#" class="header__nav-item link">Comics</a>
+                </router-link>
             </ul>
         </nav>
     </header>
@@ -27,7 +26,11 @@ import { RouterLink } from "vue-router";
 .header {
     background-color: var(--bg-header-color);
     color: white;
+    width: 100%;
     padding: 20px var(--px-container);
+    position: fixed;
+    margin-bottom: 200px;
+    z-index: 10;
 }
 .header__nav {
     margin: 0 20px;
