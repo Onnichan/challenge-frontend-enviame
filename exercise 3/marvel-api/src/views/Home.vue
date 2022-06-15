@@ -1,21 +1,28 @@
 <script setup>
-import {onMounted, ref} from 'vue';
+import { onMounted, ref } from "vue";
 import Grid from "../components/layout/Grid.vue";
-import Container from "../components/layout/Container.vue";
 import Sidebar from "../components/ui/Sidebar.vue";
-import {getCharacters} from '../api/index';
+import { getCharacters } from "../api/index";
 
-let showSidebar = ref(true);
+let showSidebar = ref(false);
 const characters = ref([]);
 
-onMounted (async () => {
+onMounted(async () => {
     const resp = await getCharacters();
-    console.log(resp);
+    characters.value = resp.data.results;
+    console.log(characters.value);
 });
-
 </script>
 
 <template>
-    <Sidebar v-if="showSidebar"></Sidebar>
-    <Grid></Grid>
+    <main class="content">
+        <Sidebar v-if="showSidebar"></Sidebar>
+        <Grid :characters="characters"></Grid>
+    </main>
 </template>
+
+<style scoped>
+.content{
+    padding: 0 var(--px-container);        
+}
+</style>

@@ -1,12 +1,13 @@
-:root{
-    --bg-logo: #e4202975; 
+:root {
+    --bg-logo: #e4202975;
     --bg-color: black;
     --text-color: white;
     --bg-header-color: rgb(12, 12, 12);
-
+    --bg-hover-before: rgba(0, 0, 0, 0.4);
+    --scroll-color: rgb(97, 96, 96);
 }
 
-:root{
+:root {
     --px-container: 80px;
 }
 
@@ -34,6 +35,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.container{
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: 4px;
+}
+
+.container {
     margin: 0 15px;
 }

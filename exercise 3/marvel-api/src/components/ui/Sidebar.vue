@@ -1,16 +1,14 @@
 <script setup>
-  import Search from './Search.vue';
+import Search from "./Search.vue";
 </script>
 <template>
-  <div class="sidebar">
-    
-  </div>
+    <div class="sidebar"></div>
 </template>
 <style scoped>
-  .sidebar{
+.sidebar {
     background-color: var(--bg-header-color);
     position: fixed;
     width: 350px;
     height: 100%;
-  }
+}
 </style>

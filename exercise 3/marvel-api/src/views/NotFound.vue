@@ -4,8 +4,8 @@
     </div>
 </template>
 <style scoped>
-    .notFound__title{
-        text-align: center;
-        color: white;
-    }  
+.notFound__title {
+    text-align: center;
+    color: white;
+}
 </style>

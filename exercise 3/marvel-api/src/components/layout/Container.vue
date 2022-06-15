@@ -4,8 +4,7 @@
     </div>
 </template>
 <style scoped>
-    .container{
-        margin: 0 50px;
-    }
-
+.container {
+    margin: 0 50px;
+}
 </style>
