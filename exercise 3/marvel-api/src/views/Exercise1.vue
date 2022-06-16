@@ -1,16 +1,14 @@
-<script>
-const btnShow = document.getElementById("btnShow");
-const grid = document.getElementById("grid");
+<script setup>
+import { ref } from "vue";
 
-// btnShow.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const from = document.getElementById("from").value;
-//     const to = document.getElementById("to").value;
+const primes = ref(null);
 
-//     const primes = showPrimeNumbers(Number(from), Number(to));
-//     console.log(primes);
-//     printPrimeNumbers(primes);
-// });
+function btnShowPrimes() {
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+
+    primes.value = showPrimeNumbers(Number(from), Number(to));
+}
 
 function showPrimeNumbers(from, to) {
     const primes = [];
@@ -34,21 +32,13 @@ function range(from, to) {
     return Array.from({ length: to - from - 1 }, (v, i) => from + i + 1);
 }
 
-const printPrimeNumbers = (primes) => {
-    let template = "";
-    primes.forEach((prime) => {
-        template += `<div class='grid__item'>${prime}</div>`;
-    });
-    grid.innerHTML = template;
-};
-
 function onlyNumbers(e) {
     return e.charCode >= 48 && e.charCode <= 57;
 }
 </script>
 <template>
     <main class="container">
-        <form class="form">
+        <form class="form" @submit.prevent="btnShowPrimes">
             <span class="form__title">Prime numbers</span>
             <input
                 type="number"
@@ -62,23 +52,20 @@ function onlyNumbers(e) {
                 type="number"
                 class="form__input"
                 id="to"
-                @keypress="onlyNumbers(event)"
+                @keyup="onlyNumbers(event)"
                 placeholder="Text your second number"
                 required
             />
             <button class="form__button" id="btnShow">Show Numbers</button>
         </form>
-        <div class="grid" id="grid"></div>
+        <div class="grid" id="grid">
+            <div class="grid__item" v-for="prime of primes">{{ prime }}</div>
+        </div>
     </main>
 </template>
 <style scoped>
-/* html,
-body {
-    height: 100%;
-} */
-
 .container {
-    padding: 40px var(--px-container);
+    padding: 150px var(--px-container);
     height: 100%;
     margin: 0 20px;
     display: flex;

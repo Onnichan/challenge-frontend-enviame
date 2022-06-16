@@ -18,10 +18,10 @@ Primeramente tiene que tener instalado nodejs 👈
   `npm install`<br />
   <li>Por ultimo solo corra este comando para ver la aplicación.</li>
 
-  `npm run dev`
+`npm run dev`
 
-  Y con eso ya podrá ver los tres ejercicios juntos en mi aplicación. Un placer y hasta la próxima.
+Y con eso ya podrá ver los tres ejercicios juntos en mi aplicación. Un placer y hasta la próxima.
 
-  Si quiere verlo en producción puede verlo desde aquí
-  
+Si quiere verlo en producción puede verlo desde aquí
+
 </ul>

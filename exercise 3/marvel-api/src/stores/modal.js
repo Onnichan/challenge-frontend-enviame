@@ -4,8 +4,8 @@ export const useModalStore = defineStore({
     id: "modal",
     state: () => ({
         showModal: false,
-        update:true,
-        title: '',
+        update: true,
+        title: "",
     }),
 
     getters: {},
@@ -14,11 +14,13 @@ export const useModalStore = defineStore({
         show() {
             this.showModal = !this.showModal;
         },
-        changeButton(value){
+        changeButton(value) {
             this.update = value;
         },
-        changeTitle(){
-            this.title = this.update ? 'Updating a character' : 'Creating a character';
-        }
+        changeTitle() {
+            this.title = this.update
+                ? "Updating a character"
+                : "Creating a character";
+        },
     },
 });

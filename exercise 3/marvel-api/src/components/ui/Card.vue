@@ -23,7 +23,6 @@ function sendId(id) {
     console.log(charId);
     charId.value = id;
 }
-
 </script>
 <template>
     <div class="card">
@@ -44,10 +43,14 @@ function sendId(id) {
                     loading="lazy"
                 />
             </router-link>
-            <!-- <div class="card__body-description">{{character.description}}</div>
-            <div class="card__body-modified">{{formateDate(character.modified)}}</div> -->
+            <div class="card__title">{{ character.name }}</div>
+            <div class="card__body-description">
+                {{ character.description }}
+            </div>
+            <div class="card__body-modified">
+                {{ formateDate(character.modified) }}
+            </div>
         </div>
-        <div class="card__title">{{ character.name }}</div>
         <button @click="sendId(character.id)">Editar</button>
     </div>
 </template>
@@ -92,5 +95,9 @@ function sendId(id) {
 .card__thumbnail:hover::before {
     background-color: var(--bg-hover-before);
     cursor: pointer;
+}
+
+.card__body-modified{
+    color: var(--bg-logo);
 }
 </style>

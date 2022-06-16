@@ -1,26 +1,33 @@
 # Ejercicios de enviame.com
 
 Bienvenido a mi proyecto
-Primeramente tiene que tener instalado nodejs 👈
+Primeramente tiene que tener instalado [NodeJS](https://nodejs.org/es/) 👈
 
-## Luego siga estos pasos
+##Nota: 
+Los dos primeros ejercicios estan hechos en Vanilla JS y puede verlos entrando a sus respectivas carpetas y correr el index.html, sin embargo también los podrá corriendo el ejercicio #3(Marvel-api). 
+
+Dicho eso, continuemos 😎
+
+## Estos son los pasos siguientes
 
 <ul>
-  <li>Primeramente escoja una carpeta de su pc para clonar mi repositorio y ahi en esa carpeta abra un terminal y escriba este comando </li>
+  <li>Elegir una carpeta en su pc para clonar mi repositorio y ahi en esa carpeta abrir una terminal y escribir los siguientes comandos </li>
   
   `git init`<br/>
   `git clone https://github.com/Onnichan/challenge-frontend-enviame.git`
+  
   `cd "exercise 3"`
+  
   `cd marvel-api`
 
   <li>De ahi correr este comando de npm para instalar las dependencias</li>
   
   `npm install`<br />
-  <li>Por ultimo solo corra este comando para ver la aplicación.</li>
+  <li>Por último solo corra este comando para ver la aplicación en modo desarrollo.</li>
 
   `npm run dev`
 
-  Y con eso ya podrá ver los tres ejercicios juntos en mi aplicación. Un placer y hasta la próxima.
+  Y con eso ya basta para ver los tres ejercicios juntos en mi aplicación. Un placer y hasta la próxima.
 
-  Si quiere verlo en producción puede verlo desde aquí
+  Gracias por haberme leido 😊
 </ul>

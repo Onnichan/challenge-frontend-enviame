@@ -26,13 +26,13 @@ const router = createRouter({
         {
             path: "/exercise1",
             name: "exercise1",
-            component: Exercise1View
+            component: Exercise1View,
         },
         {
             path: "/exercise2",
             name: "exercise2",
-            component: Exercise2View
-        }
+            component: Exercise2View,
+        },
     ],
 });
 

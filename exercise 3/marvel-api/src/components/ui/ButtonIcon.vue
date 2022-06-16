@@ -1,11 +1,10 @@
 <script setup>
 const props = defineProps({
-  type: {
-    type: String,
-    required: false,
-  }
+    type: {
+        type: String,
+        required: false,
+    },
 });
-
 </script>
 <template>
     <button class="button__wrapper" :type="type">
@@ -13,7 +12,7 @@ const props = defineProps({
             <slot name="icon"></slot>
         </div>
         <div class="button__content">
-          <slot name="text"></slot>
+            <slot name="text"></slot>
         </div>
     </button>
 </template>
