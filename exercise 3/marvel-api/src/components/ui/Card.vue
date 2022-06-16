@@ -1,18 +1,37 @@
 <script setup>
 import { formateDate } from "../../util/date.js";
 import { RouterLink } from "vue-router";
+import { useModalStore } from "../../stores/modal.js";
 
+const storeModal = useModalStore();
 const props = defineProps({
     character: {
         type: Object,
         required: true,
     },
 });
+
+function pathLocation(id) {
+    return `/character/${id}`;
+}
+
+function sendId(id) {
+    storeModal.show();
+    storeModal.changeButton(true);
+    storeModal.changeTitle();
+    const charId = document.getElementById("character-id");
+    console.log(charId);
+    charId.value = id;
+}
+
 </script>
 <template>
     <div class="card">
         <div class="card__body">
-            <router-link to="/asdasd" class="card__thumbnail">
+            <router-link
+                :to="pathLocation(character.id)"
+                class="card__thumbnail"
+            >
                 <img
                     :src="
                         character.thumbnail.path.concat(
@@ -29,7 +48,7 @@ const props = defineProps({
             <div class="card__body-modified">{{formateDate(character.modified)}}</div> -->
         </div>
         <div class="card__title">{{ character.name }}</div>
-        <button>Editar</button>
+        <button @click="sendId(character.id)">Editar</button>
     </div>
 </template>
 <style scoped>
@@ -43,9 +62,8 @@ const props = defineProps({
     margin-top: 20px;
 }
 
-.card__body {
-    /* position: relative; */
-}
+/* .card__body {
+} */
 
 .card__thumbnail {
     width: 100%;

@@ -1,23 +1,25 @@
 <script setup>
-import { onBeforeMount, onMounted, ref } from "vue";
-import Grid from "../components/layout/Grid.vue";
-import Sidebar from "../components/ui/Sidebar.vue";
+import { onBeforeMount, onMounted } from "vue";
 import { getCharacters } from "../api/index";
+import { useModalStore } from "../stores/modal";
+import { useCharacterStore } from "../stores/character";
+import { storeToRefs } from "pinia";
+import Grid from "../components/layout/Grid.vue";
 import Loading from "../components/ui/Loading.vue";
-import Modal from '../components/ui/Modal.vue';
+import Modal from "../components/ui/Modal.vue";
 
-let showSidebar = ref(false);
-let characters = ref([]);
-let limit = ref(20);
-let offset = ref(0);
-let loading = ref(true);
-let showModal = ref(false);
+const { showModal } = storeToRefs(useModalStore());
+const storeCharacter = useCharacterStore();
+const { addCharacterToFinish, setLoading, addOffset } = useCharacterStore();
 
 onBeforeMount(async () => {
-    const resp = await getCharacters(limit.value, offset.value);
-    offset.value += 20;
-    loading.value = false;
-    characters.value = [...characters.value, ...resp.data.results];
+    const resp = await getCharacters(
+        storeCharacter.limit,
+        storeCharacter.offset
+    );
+    addOffset();
+    setLoading(false);
+    addCharacterToFinish(resp.data.results);
 });
 
 onMounted(() => {
@@ -26,31 +28,23 @@ onMounted(() => {
 
 const infiniteScroll = async () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        const resp = await getCharacters(limit.value, offset.value);
-        characters.value = [...characters.value, ...resp.data.results];
-        offset.value += 20;
+        const resp = await getCharacters(
+            storeCharacter.limit,
+            storeCharacter.offset
+        );
+        addCharacterToFinish(resp.data.results);
+        addOffset();
     }
-};
-
-const addNewCharacter = (e) => {
-    e.preventDefault();
-
-    characters.value = [...characters.value];
-};
-
-const editCharacter = (e) => {
-    e.preventDefault();
 };
 </script>
 
 <template>
     <main class="content">
-        <!-- <Sidebar v-if="showSidebar"></Sidebar> -->
+        <Loading v-if="storeCharacter.loading"></Loading>
+        <Grid :characters="storeCharacter.characters" v-else></Grid>
         <Teleport to="body">
-            <Modal v-if="!showModal"></Modal>
+            <Modal v-show="showModal"></Modal>
         </Teleport>
-        <Loading v-if="loading"></Loading>
-        <Grid :characters="characters" v-else></Grid>
     </main>
 </template>
 <style scoped>

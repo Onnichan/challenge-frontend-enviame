@@ -1,29 +1,27 @@
 # marvel-api
 
-This template should help get you started developing with Vue 3 in Vite.
+Bienvenido a mi proyecto
+Primeramente tiene que tener instalado nodejs 👈
 
-## Recommended IDE Setup
+## Luego siga estos pasos
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<ul>
+  <li>Primeramente escoja una carpeta de su pc para clonar mi repositorio y ahi en esa carpeta abra un terminal y escriba este comando </li>
+  
+  `git init`<br/>
+  `git clone https://github.com/Onnichan/challenge-frontend-enviame.git`
+  `cd "exercise 3"`
+  `cd marvel-api`
 
-## Customize configuration
+  <li>De ahi correr este comando de npm para instalar las dependencias</li>
+  
+  `npm install`<br />
+  <li>Por ultimo solo corra este comando para ver la aplicación.</li>
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+  `npm run dev`
 
-## Project Setup
+  Y con eso ya podrá ver los tres ejercicios juntos en mi aplicación. Un placer y hasta la próxima.
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+  Si quiere verlo en producción puede verlo desde aquí
+  
+</ul>

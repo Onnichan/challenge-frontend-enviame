@@ -1,6 +1,7 @@
 <script setup>
 import Card from "../ui/Card.vue";
-const props = defineProps({
+
+defineProps({
     characters: {
         type: Array,
         required: true,

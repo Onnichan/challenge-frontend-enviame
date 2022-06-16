@@ -1,20 +1,40 @@
 <script setup>
 const props = defineProps({
-    type : {
-        type : String,
+    type: {
+        type: String,
         required: false,
-        default: 'text'
+        default: "text",
     },
     placeholder: {
         type: String,
         required: false,
-        default: ''
-    }        
-})
+        default: "",
+    },
+    id: {
+        type: String,
+        required: false,
+    },
+    name: {
+        type: String,
+        required: false,
+    },
+    required: {
+        type: Boolean,
+        required: false,
+        default: false,
+    },
+});
 </script>
 <template>
     <div class="input__wrapper">
-        <input :type="type" class="input__content" :placeholder="placeholder" />
+        <input
+            :type="type"
+            class="input__content"
+            :placeholder="placeholder"
+            :id="id"
+            :name="name"
+            :required="required"
+        />
         <div class="input__icon">
             <slot></slot>
         </div>

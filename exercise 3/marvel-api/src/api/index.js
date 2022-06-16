@@ -7,6 +7,7 @@ export const getCharacters = async (limit, offset) => {
             `https://gateway.marvel.com/v1/public/characters?apikey=${PUBLIC_KEY}&limit=${limit}&offset=${offset}`
         );
         const data = await res.json();
+        console.log(data);
         return data;
     } catch (error) {
         console.log(error);

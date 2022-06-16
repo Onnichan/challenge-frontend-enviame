@@ -1,4 +1,3 @@
-
 <template>
     <svg
         version="1.1"

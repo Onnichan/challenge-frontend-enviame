@@ -1,19 +1,19 @@
 <script setup>
 import Form from "./Form.vue";
-// const props = defineProps({
-//     show: Boolean,
-// });
+import { useModalStore } from "../../stores/modal";
+import { storeToRefs } from "pinia";
+
+const { title } = storeToRefs(useModalStore());
 </script>
 <template>
     <Transition>
         <div class="modal">
-            <h1 class="modal__title">
-                Editing a character
-            </h1>
+            <h1 class="modal__title">{{ title }}</h1>
             <div class="modal__body">
                 <Form></Form>
             </div>
             <!-- <div class="modal__options"></div> -->
+            <!-- <button @click="$emit('close')" >Cerrar</button> -->
         </div>
     </Transition>
 </template>
@@ -27,10 +27,11 @@ import Form from "./Form.vue";
     right: 35%;
     color: black;
     z-index: 20;
+    padding-top: 40px;
     border-radius: 10px;
 }
 
-.modal__title{
+.modal__title {
     text-align: center;
 }
 
@@ -188,31 +189,31 @@ import Form from "./Form.vue";
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1030px){
-  .modal{
-    right: 27%;
-    left: 27%;
-  }
+@media only screen and (max-width: 1030px) {
+    .modal {
+        right: 27%;
+        left: 27%;
+    }
 }
 
-@media only screen and (max-width: 760px){
-  .modal{
-    right: 15%;
-    left: 15%;
-  }
+@media only screen and (max-width: 760px) {
+    .modal {
+        right: 15%;
+        left: 15%;
+    }
 }
 
-@media only screen and (max-width: 550px){
-  .modal{
-    right: 14%;
-    left: 14%;
-  }
+@media only screen and (max-width: 550px) {
+    .modal {
+        right: 14%;
+        left: 14%;
+    }
 }
 
-@media only screen and (max-width: 430px){
-  .modal{
-    right: 0;
-    left: 0;
-  }
+@media only screen and (max-width: 430px) {
+    .modal {
+        right: 0;
+        left: 0;
+    }
 }
 </style>
