@@ -44,12 +44,12 @@ function sendId(id) {
                 />
             </router-link>
             <div class="card__title">{{ character.name }}</div>
-            <div class="card__body-description">
+            <!-- <div class="card__body-description">
                 {{ character.description }}
             </div>
             <div class="card__body-modified">
                 {{ formateDate(character.modified) }}
-            </div>
+            </div> -->
         </div>
         <button @click="sendId(character.id)">Editar</button>
     </div>
@@ -78,6 +78,7 @@ function sendId(id) {
     display: block;
     border-radius: 4px;
     object-fit: cover;
+    /* background: green; */
     /* z-index: 5; */
 }
 

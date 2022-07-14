@@ -33,9 +33,6 @@ function submit(option) {
         : addCharacterToStart({ name, modified, description, thumbnail });
 }
 
-function addNewCharacter() {
-    const { id, description, modified, name, url } = getData();
-}
 </script>
 <template>
     <form
