@@ -32,7 +32,6 @@ function submit(option) {
         ? editCharacter(id, { name, modified, description, thumbnail })
         : addCharacterToStart({ name, modified, description, thumbnail });
 }
-
 </script>
 <template>
     <form
