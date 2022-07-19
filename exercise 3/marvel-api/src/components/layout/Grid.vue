@@ -35,8 +35,10 @@ defineProps({
     color: var(--bg-logo);
 }
 .grid__body {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 20px; */
+    column-count: 4;
+    column-gap: 10px;
 }
 </style>
